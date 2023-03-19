@@ -4,6 +4,7 @@ import axios from "axios";
 function App() {
   const baseUrl = "http://localhost:8080/api/texts";
   const [textList, setTextList] = useState([{ content: "" }]);
+  const [mergedText, setMergedText] = useState("");
 
   const handleTextChange = (e, index) => {
     const { name, value } = e.target;
@@ -23,6 +24,7 @@ function App() {
       .post(baseUrl, requestData)
       .then((res) => {
         console.log(res.data);
+        setMergedText(res.data.mergedText);
       })
       .catch((err) => {
         console.log(err);
@@ -49,6 +51,10 @@ function App() {
         </button>
         <button type="submit">Submit</button>
       </form>
+      <button type="button" onClick={handleSubmit}>
+        Merge Texts
+      </button>
+      <div>{mergedText}</div>
     </div>
   );
 }
