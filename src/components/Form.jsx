@@ -45,7 +45,7 @@ const Form = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <h3>Input Texts</h3>
+        <h3>Text Inputs</h3>
         {textList.map((item, index) => (
           <div className="text-inputs" key={index}>
             <label htmlFor={`content-${index}`}></label>
