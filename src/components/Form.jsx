@@ -6,6 +6,7 @@ const Form = () => {
   const baseUrl = "http://localhost:8080/api/texts";
   const [textList, setTextList] = useState([{ content: "" }]);
   const [mergedText, setMergedText] = useState("");
+  const [duration, setDuration] = useState(0.0);
 
   const handleTextChange = (e, index) => {
     const { name, value } = e.target;
@@ -26,6 +27,7 @@ const Form = () => {
 
   const handleClearText = () => {
     setTextList([{ content: "" }]);
+    setMergedText("");
   };
 
   const handleSubmit = (e) => {
@@ -36,6 +38,7 @@ const Form = () => {
       .then((res) => {
         console.log(res.data);
         setMergedText(res.data.mergedText);
+        setDuration(res.data.durationTime);
       })
       .catch((err) => {
         console.log(err);
@@ -92,6 +95,7 @@ const Form = () => {
       <div className="merged-text">
         <h3>Merged Text</h3>
         <p>{mergedText}</p>
+        <span>Duration: {duration} seconds</span>
       </div>
     </div>
   );
