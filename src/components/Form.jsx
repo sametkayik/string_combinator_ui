@@ -64,6 +64,7 @@ const Form = () => {
         console.log(err);
       });
     setMergedText("");
+    setSaved(false);
   };
 
   return (
