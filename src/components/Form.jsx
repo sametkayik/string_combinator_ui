@@ -28,6 +28,7 @@ const Form = () => {
   const handleClearText = () => {
     setTextList([{ content: "" }]);
     setMergedText("");
+    setDuration(0.0);
   };
 
   const handleSubmit = (e) => {
@@ -95,7 +96,7 @@ const Form = () => {
       <div className="merged-text">
         <h3>Merged Text</h3>
         <p>{mergedText}</p>
-        <span>Duration: {duration} seconds</span>
+        {duration > 0 && <span>Duration: {duration} seconds</span>}
       </div>
     </div>
   );
