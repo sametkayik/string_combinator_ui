@@ -25,9 +25,6 @@
   padding: 0 1rem;
   height: 2rem;
   font-weight: 900;
-  /* background-color: #7d42ff; */
-  /* border-radius: 0 0 10px 10px; */
-  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); */
 }
 .form-container {
   display: flex;
@@ -36,7 +33,6 @@
   margin: 1rem;
 }
 
-/* Set a max-width for the form container and center it horizontally */
 form {
   max-width: 500px;
   width: 55%;
@@ -54,7 +50,6 @@ form h3 {
   font-weight: 700;
 }
 
-/* Style the form labels */
 label {
   display: block;
   margin-bottom: 5px;
@@ -68,7 +63,6 @@ label {
   padding: 0 10px;
 }
 
-/* Style the input fields */
 input[type="text"] {
   border-radius: 4px;
   border: none;
@@ -86,7 +80,6 @@ input[type="text"]::placeholder {
   color: #999;
 }
 
-/* Style the "Add Text" button */
 .add-text-button {
   background-color: #7d42ff;
   color: white;
@@ -118,7 +111,6 @@ input[type="text"]::placeholder {
   background-color: #5f21e3;
 }
 
-/* Style the submit button */
 .submit-button {
   background-color: #7d42ff;
   color: white;
@@ -139,7 +131,6 @@ input[type="text"]::placeholder {
   cursor: not-allowed;
 }
 
-/* Style the merged text output */
 .merged-text {
   width: 40%;
   font-weight: 400;
