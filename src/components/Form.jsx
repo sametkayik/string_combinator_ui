@@ -3,10 +3,11 @@ import axios from "axios";
 import "../../src/index.css";
 
 const Form = () => {
-  const baseUrl = "http://localhost:8080/api/texts";
+  const baseUrl = "http://localhost:8080/api";
   const [textList, setTextList] = useState([{ content: "" }]);
   const [mergedText, setMergedText] = useState("");
   const [duration, setDuration] = useState(0.0);
+  const [saved, setSaved] = useState(false);
 
   const handleTextChange = (e, index) => {
     const { name, value } = e.target;
@@ -29,13 +30,31 @@ const Form = () => {
     setTextList([{ content: "" }]);
     setMergedText("");
     setDuration(0.0);
+    setSaved(false);
+  };
+
+  const handleSaveText = () => {
+    const requestData = {
+      texts: textList.map((item) => item.content),
+      mergedText: mergedText,
+      durationTime: duration,
+    };
+    axios
+      .post(baseUrl + "/saveText", requestData)
+      .then((res) => {
+        console.log(res.data);
+        setSaved(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const requestData = { texts: textList.map((item) => item.content) };
     axios
-      .post(baseUrl, requestData)
+      .post(baseUrl + "/mergeText", requestData)
       .then((res) => {
         console.log(res.data);
         setMergedText(res.data.mergedText);
@@ -46,6 +65,7 @@ const Form = () => {
       });
     setMergedText("");
   };
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
@@ -96,7 +116,23 @@ const Form = () => {
       <div className="merged-text">
         <h3>Merged Text</h3>
         <p>{mergedText}</p>
-        {duration > 0 && <span>Duration: {duration} seconds</span>}
+        <div className="merged-text-bottom">
+          {mergedText && (
+            <button
+              className="save-button"
+              type="button"
+              onClick={handleSaveText}
+            >
+              Save Text
+            </button>
+          )}
+          {saved && (
+            <span className="saved-span">Text saved successfully!</span>
+          )}
+          {duration > 0 && (
+            <span className="duration-span">Duration: {duration} seconds</span>
+          )}
+        </div>
       </div>
     </div>
   );
