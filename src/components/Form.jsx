@@ -8,6 +8,7 @@ const Form = () => {
   const [mergedText, setMergedText] = useState("");
   const [duration, setDuration] = useState(0.0);
   const [saved, setSaved] = useState(false);
+  const [routeUrl, setRouteUrl] = useState("");
 
   const handleTextChange = (e, index) => {
     const { name, value } = e.target;
@@ -54,7 +55,7 @@ const Form = () => {
     e.preventDefault();
     const requestData = { texts: textList.map((item) => item.content) };
     axios
-      .post(baseUrl + "/mergeText", requestData)
+      .post(baseUrl + routeUrl, requestData)
       .then((res) => {
         console.log(res.data);
         setMergedText(res.data.mergedText);
@@ -102,8 +103,21 @@ const Form = () => {
           >
             +
           </button>
-          <button className="submit-button" type="submit">
-            Merge Texts
+          <button
+            id="linear-merge-button"
+            className="submit-button"
+            type="submit"
+            onClick={() => setRouteUrl("/mergeText")}
+          >
+            Linear Merge Texts
+          </button>
+          <button
+            id="nonlinear-merge-button"
+            className="submit-button"
+            type="submit"
+            onClick={() => setRouteUrl("/mergeTextNonlinear")}
+          >
+            Nonlinear Merge Texts
           </button>
           <button
             className="clear-button"
