@@ -61,7 +61,7 @@ form {
 form h3 {
   padding: 4px;
   margin: 0 0 16px 0;
-  background: linear-gradient(90deg, #7d42ff 0%, #b055ff 100%);
+  background-color: #6d4e92;
   border-radius: 10px 10px 0 0;
   text-align: center;
   font-weight: 700;
@@ -92,7 +92,7 @@ input[type="text"]::placeholder {
 }
 
 .add-text-button {
-  background-color: #7d42ff;
+  background-color: #6d4e92;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -103,7 +103,7 @@ input[type="text"]::placeholder {
 }
 
 .remove-text-button {
-  background-color: #7d42ff;
+  background-color: #6d4e92;
   color: white;
   border: none;
   padding: 0 16px;
@@ -115,7 +115,7 @@ input[type="text"]::placeholder {
 }
 
 .submit-button {
-  background-color: #7d42ff;
+  background-color: #6d4e92;
   color: white;
   border: none;
   padding: 8px;
@@ -145,7 +145,7 @@ input[type="text"]::placeholder {
 .merged-text h3 {
   padding: 4px;
   margin: 0;
-  background: linear-gradient(90deg, #b055ff 0%, #7d42ff 100%);
+  background-color: #6d4e92;
   border-radius: 10px 10px 0 0;
   text-align: center;
   font-weight: 700;
@@ -158,7 +158,7 @@ input[type="text"]::placeholder {
 }
 
 .clear-button {
-  background-color: #7d42ff;
+  background-color: #6d4e92;
   color: white;
   border: none;
   padding: 8px;
