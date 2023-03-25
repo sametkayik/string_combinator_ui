@@ -74,7 +74,6 @@ const Form = () => {
         <h3>Text Inputs</h3>
         {textList.map((item, index) => (
           <div className="text-inputs" key={index}>
-            <label htmlFor={`content-${index}`}></label>
             <input
               type="text"
               name="content"
