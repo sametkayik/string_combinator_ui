@@ -59,7 +59,7 @@ form {
 }
 
 form h3 {
-  padding: 4px;
+  padding: 0.25rem;
   margin: 0 0 16px 0;
   background-color: #6d4e92;
   border-radius: 10px 10px 0 0;
@@ -95,7 +95,7 @@ input[type="text"]::placeholder {
   background-color: #6d4e92;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
 
@@ -106,7 +106,7 @@ input[type="text"]::placeholder {
   background-color: #6d4e92;
   color: white;
   border: none;
-  padding: 0 16px;
+  padding: 0 1rem;
   margin: 0 0 10px 4px;
   border-radius: 4px;
   cursor: pointer;
@@ -118,7 +118,7 @@ input[type="text"]::placeholder {
   background-color: #6d4e92;
   color: white;
   border: none;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 4px;
   cursor: pointer;
 
@@ -143,7 +143,7 @@ input[type="text"]::placeholder {
 }
 
 .merged-text h3 {
-  padding: 4px;
+  padding: 0.25rem;
   margin: 0;
   background-color: #6d4e92;
   border-radius: 10px 10px 0 0;
@@ -161,10 +161,9 @@ input[type="text"]::placeholder {
   background-color: #6d4e92;
   color: white;
   border: none;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 4px;
   cursor: pointer;
-
   transition: all 0.2s ease-in-out;
 }
 
@@ -197,7 +196,7 @@ input[type="text"]::placeholder {
   background-color: #7d42ff;
   color: white;
   border: none;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 4px;
   cursor: pointer;
 
@@ -220,7 +219,7 @@ button:hover {
   flex-wrap: wrap;
 }
 
-.collection li {
+.collection div {
   display: flex;
   flex-direction: column;
   margin: 0 0 0.5rem 0;
@@ -228,26 +227,22 @@ button:hover {
   list-style: none;
   border-radius: 10px;
   background-color: #423e4b;
-  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.collection li li {
+.collection div li {
+  margin: 0 0 0.5rem 0;
+  padding: 0.75rem;
   background-color: #11111a;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-.collection li span {
-  display: flex;
-  flex-direction: column;
-}
-
-.collection li:hover {
+.collection div:hover {
   cursor: pointer;
 }
 
-.collection li.selected {
+.collection div.selected {
   background-color: #6d4e92;
 }
 
@@ -258,19 +253,20 @@ button:hover {
   background-color: #7d42ff;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border-radius: 70%;
   cursor: pointer;
   font-size: 1.5rem;
   transition: all 0.2s ease-in-out;
 }
+
 @media screen and (max-width: 768px) {
   .text-inputs {
     flex-direction: column;
   }
   [type="submit"],
   [type="button"] {
-    padding: 8px;
+    padding: 0.5rem;
     margin: 1px;
   }
   .save-button {
@@ -285,7 +281,7 @@ button:hover {
     flex-direction: column;
   }
   .collection {
-    width: 100%;
+    width: 90%;
   }
 
   [type="submit"],

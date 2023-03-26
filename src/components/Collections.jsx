@@ -41,7 +41,7 @@ const Collections = () => {
       <div className="collection">
         <ul>
           {data.map((item) => (
-            <li
+            <div
               key={item._id}
               onClick={() => handleShowDetail(item._id)}
               className={item._id === selectedItem ? "selected" : ""}
@@ -63,7 +63,7 @@ const Collections = () => {
                   </p>
                 </>
               ) : null}
-            </li>
+            </div>
           ))}
         </ul>
       </div>
