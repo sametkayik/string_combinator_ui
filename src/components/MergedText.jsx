@@ -1,6 +1,11 @@
 import React from "react";
 
-const MergedText = ({ mergedText, duration, saved, handleSaveText }) => {
+const MergedText = ({
+  mergedText,
+  durationInSeconds,
+  saved,
+  handleSaveText,
+}) => {
   return (
     <div className="merged-text">
       <h3>Merged Text</h3>
@@ -16,8 +21,10 @@ const MergedText = ({ mergedText, duration, saved, handleSaveText }) => {
           </button>
         )}
         {saved && <span className="saved-span">Text saved successfully!</span>}
-        {duration > 0 && (
-          <span className="duration-span">Duration: {duration} seconds</span>
+        {durationInSeconds > 0 && (
+          <span className="duration-span">
+            Duration: {durationInSeconds} seconds
+          </span>
         )}
       </div>
     </div>

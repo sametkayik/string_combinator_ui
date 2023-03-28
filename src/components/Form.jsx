@@ -7,7 +7,7 @@ const Form = () => {
   const baseUrl = "http://localhost:8080/api";
   const [textList, setTextList] = useState([{ content: "" }, { content: "" }]);
   const [mergedText, setMergedText] = useState("");
-  const [duration, setDuration] = useState(0.0);
+  const [durationInSeconds, setDurationInSeconds] = useState(0.0);
   const [saved, setSaved] = useState(false);
   const [routeUrl, setRouteUrl] = useState("");
 
@@ -30,7 +30,7 @@ const Form = () => {
   const handleClearText = () => {
     setTextList([{ content: "" }, { content: "" }]);
     setMergedText("");
-    setDuration(0.0);
+    setDurationInSeconds(0.0);
     setSaved(false);
   };
 
@@ -38,7 +38,7 @@ const Form = () => {
     const requestData = {
       texts: textList.map((item) => item.content),
       mergedText: mergedText,
-      durationTime: duration,
+      durationInSeconds: durationInSeconds,
     };
     axios
       .post(baseUrl + "/saveText", requestData)
@@ -59,7 +59,7 @@ const Form = () => {
       .then((res) => {
         console.log(res.data);
         setMergedText(res.data.mergedText);
-        setDuration(res.data.durationTime);
+        setDurationInSeconds(res.data.durationInSeconds);
       })
       .catch((err) => {
         console.log(err);
@@ -82,7 +82,7 @@ const Form = () => {
       </form>
       <MergedText
         mergedText={mergedText}
-        duration={duration}
+        durationInSeconds={durationInSeconds}
         saved={saved}
         handleSaveText={handleSaveText}
       />

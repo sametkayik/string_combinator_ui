@@ -59,7 +59,7 @@ const Collections = () => {
                     ))}
                   </p>
                   <p>
-                    <b>Duration Time</b> <li>{item.durationTime}</li>
+                    <b>Duration in Seconds</b> <li>{item.durationInSeconds}</li>
                   </p>
                 </>
               ) : null}
