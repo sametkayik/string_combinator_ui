@@ -5,4 +5,4 @@ benzerlik, frekans gibi özelliklerin bulunması, metinlerin birleştirip birle�
 karar verilmesi ve elde edilen verilerden karakter tabanlı cümlelerin/kelimelerin 
 birleştirilmesi amaçlanmaktadır.
 
-![Best web app ever](https://s10.gifyu.com/images/Animation3.gif)
+![Best web app ever](https://s10.gifyu.com/images/Animation5f5e12a1a980dda04.gif)
